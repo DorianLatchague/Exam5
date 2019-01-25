@@ -1,0 +1,47 @@
+<h3>Edit this pet:</h3>
+<form>
+  <p *ngIf="error && error.name" style="color: red;">{{error.name.message}}</p>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Pet name:</span>
+    </div>
+    <input name="pet.name" type="text" class="form-control" [(ngModel)]="pet.name">
+  </div>
+  <p *ngIf="error && error.type" style="color: red;">{{error.type.message}}</p>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Pet type:</span>
+    </div>
+    <input name="pet.type" type="text" class="form-control" [(ngModel)]="pet.type">
+  </div>
+  <p *ngIf="error && error.description" style="color: red;">{{error.description.message}}</p>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Description:</span>
+    </div>
+    <input name="pet.description" type="text" class="form-control" [(ngModel)]="pet.description">
+  </div>
+  <div>
+    <h6>Skills:</h6>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Skill 1:</span>
+      </div>
+      <input name="pet.skill1" type="text" class="form-control" [(ngModel)]="pet.skill1">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Skill 2:</span>
+      </div>
+      <input name="pet.skill2" type="text" class="form-control" [(ngModel)]="pet.skill2">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Skill 3:</span>
+      </div>
+      <input name="pet.skill3" type="text" class="form-control" [(ngModel)]="pet.skill3">
+    </div>
+  </div>
+  <button class="btn btn-outline-success" (click)="editPet()">Edit pet</button>
+  <button class="btn btn-outline-danger" (click)="goBack()">Cancel</button>
+</form>

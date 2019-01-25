@@ -1,0 +1,10 @@
+<h3>Details about {{pet.name}}</h3>
+<a [routerLink]="['/']">Home</a>
+<p style="font-weight: bold;">Pet type:<span style="margin-left: 20px; font-weight: none;">{{pet.type}}</span></p>
+<p style="font-weight: bold;">Description:<span style="margin-left: 20px; font-weight: none;">{{pet.description}}</span></p>
+<p style="font-weight: bold;">Skills: </p><ul style="margin-left: 20px; font-weight: none;" *ngFor="let skill of pet.skills">
+  <li>{{skill}}</li>
+</ul>
+<p style="font-weight: bold;">Likes:<span style="margin-left: 20px; font-weight: none;">{{pet.likes}}</span></p>
+<button *ngIf="!isLiked" class="btn btn-outline-primary" (click)="like()">Like this pet</button>
+<button class="btn btn-outline-success" (click)="onDelete()">Adopt this pet!</button>
